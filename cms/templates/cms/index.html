@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+    <h2>Logged in as: {{user.username}}. <a href="/cms/logout">Logout</a></h2>
+{% else %}
+    <h2>Not logged in. <a href="/admin/">Login</a></h2>
+{% endif %}
+{% if content_list %}
+    <ul>
+    {% for content in content_list %}
+        <li><a href="/cms/{{ content.clave }}">{{ content.clave }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No contents are available.</p>
+{% endif %}
