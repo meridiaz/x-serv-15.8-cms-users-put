@@ -6,6 +6,9 @@ from django.contrib.auth import logout
 
 from .models import Contenido, Comentario
 
+#usuario: meri
+#contraseña: cursosweb
+
 @csrf_exempt
 def get_content(request, llave):
     if request.method == "PUT":
